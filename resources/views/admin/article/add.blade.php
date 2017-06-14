@@ -32,16 +32,15 @@
                         <div class="ibox-title">
                             <h5>添加文章<small>...</small></h5>
                         </div>
-						
-						
+							
                         <div class="ibox-content">
-                            <form method="get" class="form-horizontal">
+                            <form class="form-horizontal"  action="javascript:;" id="save_form">
                                 <div class="hr-line-dashed"></div>
         
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">文章标题：</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="art_title" >
                                         <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>前台页面显示的标题</span>
                                     </div>
                                 </div>
@@ -50,7 +49,7 @@
                                 <div class="form-group">
                                 <label class="col-sm-2 control-label">所属分类</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b" name="account">
+                                        <select class="form-control m-b" id="art_category" name="account">
                                             <option>PHP</option>
                                             <option>laravel</option>
                                             <option> Java</option>
@@ -63,29 +62,26 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">关键字：</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text"  class="form-control" id="art_keywords">
                                         <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>关键字</span>
                                     </div>
                                 </div>
+
                                 <div class="hr-line-dashed"></div>
-                                
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">关键字：</label>
-                                    <div class="col-sm-10">
-                                       <textarea type="text" rows="5" name="remark" id="remark" placeholder="输入文章描述" class="form-control"></textarea>
-                                    </div>
-                                </div>
+
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">内容：</label>
                                     <div class="col-sm-10">
-                                       <textarea type="text" rows="5" name="remark" id="remark" placeholder="内容" class="form-control"></textarea>
+                                       <textarea type="text" id="art_content" rows="5" name="remark" id="remark" placeholder="内容" class="form-control"></textarea>
                                     </div>
                                 </div>
                                <div class="form-group">
+                                
                                 <div class="hr-line-dashed"></div>
+
                                 <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-3">
-                                            <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存信息</button>&nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-primary" href="javascript: ;" type="submit" id="save"><i class="fa fa-save"></i> 保存信息</button>&nbsp;&nbsp;&nbsp;
                                             <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                                         </div>
                                 </div>
@@ -106,5 +102,41 @@
 
 
 @section('myjs')
+<script>
+        
+        $('#save').click(function(){
+
+            var oTitle = $("#art_title");
+            var oCategory = $('#art_category');
+            var oKeywords = $("#art_keywords");
+            var oContent = $("#art_content");
+
+            $.ajax({
+            url: '/admin/article/add',
+            type: 'POST',
+            dataType: 'json',
+            cache: false,
+            data: {
+                title: oTitle.val(),
+                keywords: oKeywords.val(),
+                content: oContent.val(),
+                _token: "{{csrf_token()}}"
+            },
+            success: function(data) {
+                if (data.status != 0){
+                    alert(data.message);
+                }else{
+                   console.log(data);
+                }
+            },
+            error: function(data) {
+                alert("错误");
+            }
+        });
+        });
+
+
+
    
+</script>
 @endsection

@@ -11,7 +11,7 @@
 |
 */
 Route::get('','Admin\IndexController@index');
-Route::get('demo','Admin\DemoController@index');
+Route::get('1','Admin\DemoController@index');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 
@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 
 		Route::get('','ArticleController@index');
 		Route::get('index','ArticleController@index');
-		Route::get('add','ArticleController@add');
+		Route::any('add','ArticleController@add');
 
 		Route::get('edit','ArticleController@edit');
 		Route::get('demo','ArticleController@demo');
