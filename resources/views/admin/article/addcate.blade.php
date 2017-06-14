@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', '基本配置')
+@section('title', '添加文章')
 
 @section('content')
 <!-- 主要内容（开始） -->
@@ -30,7 +30,7 @@
                     
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>添加文章<small>...</small></h5>
+                            <h5>添加分类<small>...</small></h5>
                         </div>
 							
                         <div class="ibox-content">
@@ -38,45 +38,36 @@
                                 <div class="hr-line-dashed"></div>
         
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">文章标题：</label>
+                                    <label class="col-sm-2 control-label">分类名称：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="art_title" >
-                                        <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>前台页面显示的标题</span>
+                                        <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>分类的名称</span>
                                     </div>
                                 </div>
+
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group">
-                                <label class="col-sm-2 control-label">所属分类</label>
+								<div class="form-group">
+                                    <label class="col-sm-2 control-label">排序：</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b" id="art_category" name="account">
-                                            <option>PHP</option>
-                                            <option>laravel</option>
-                                            <option> Java</option>
-                                            <option>Python</option>
-                                        </select> 
+                                        <input type="text" class="form-control" id="art_title" >
+                                        <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>设置分类的顺序</span>
                                     </div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
                                 
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">关键字：</label>
-                                    <div class="col-sm-10">
-                                        <input type="text"  class="form-control" id="art_keywords">
-                                        <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>关键字</span>
-                                    </div>
-                                </div>
-
                                 <div class="hr-line-dashed"></div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">内容：</label>
-                                    <div class="col-sm-10">
-                                       <textarea type="text" id="art_content" rows="5" name="remark" id="remark" placeholder="内容" class="form-control"></textarea>
-                                    </div>
-                                </div>
                                <div class="form-group">
-                                
+                               		<label class="col-sm-2 control-label">是否开启：</label>
+                                    	<div class="col-sm-10">
+	                                    	<label class="checkbox-inline">
+	                                    		<input type="checkbox" value="option1" id="inlineCheckbox1"> 开启
+	                                    	</label> 
+	                                    	<label class="checkbox-inline">
+	                                    		<input type="checkbox" value="option2" id="inlineCheckbox2"> 关闭
+	                                    	</label>
+                                		</div>
+                                </div>
+
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
@@ -134,8 +125,6 @@
             }
         });
         });
-
-
 
    
 </script>

@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('','Admin\IndexController@index');
-Route::get('1','Admin\DemoController@index');
+
+Route::get('demo','Admin\DemoController@index');
+
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 
@@ -50,8 +51,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 	Route::group(['prefix' => 'article'],function(){
 
 		Route::get('','ArticleController@index');
-		Route::get('index','ArticleController@index');
-		Route::any('add','ArticleController@add');
+
+
+		Route::any('addarticle','ArticleController@addarticle');
+		Route::any('addcate','ArticleController@addcate');
 
 		Route::get('edit','ArticleController@edit');
 		Route::get('demo','ArticleController@demo');
