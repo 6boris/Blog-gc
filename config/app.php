@@ -182,7 +182,7 @@ return [
          * 
          */
         
-        Yajra\Datatables\DatatablesServiceProvider::class
+        
 
 
     ],
@@ -238,7 +238,7 @@ return [
         /*
          * 额外添加的拓展库
          */
-        'DataTables' => Yajra\Datatables\DatatablesServiceProvider::class
+        
 
 
     ],
