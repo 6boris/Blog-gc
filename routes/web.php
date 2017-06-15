@@ -12,6 +12,7 @@
 */
 
 Route::get('demo','Admin\DemoController@index');
+Route::get('details','Admin\DemoController@details');
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
@@ -51,12 +52,14 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 	Route::group(['prefix' => 'article'],function(){
 
 		Route::get('','ArticleController@index');
-
-
+		Route::get('listarticle','ArticleController@listarticle');
 		Route::any('addarticle','ArticleController@addarticle');
+		Route::get('edit','ArticleController@edit');
+		Route::get('del','ArticleController@del');
+
+
 		Route::any('addcate','ArticleController@addcate');
 
-		Route::get('edit','ArticleController@edit');
 		Route::get('demo','ArticleController@demo');
 
 	});

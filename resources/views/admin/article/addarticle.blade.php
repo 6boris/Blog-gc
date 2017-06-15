@@ -112,7 +112,7 @@
             var oContent = $("#art_content");
 
             $.ajax({
-            url: '/admin/article/add',
+            url: '/admin/article/addarticle',
             type: 'POST',
             dataType: 'json',
             cache: false,

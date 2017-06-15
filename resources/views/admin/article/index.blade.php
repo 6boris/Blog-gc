@@ -2,6 +2,9 @@
 @section('title', '添加文章')
 
 @section('content')
+ <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+ <!-- <link rel="stylesheet" href="http://www.datatable.com/css/app.css"> -->
+
 <!-- 主要内容（开始） -->
     <!-- 顶部路径提示（开始） -->
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -10,7 +13,7 @@
             <ol class="breadcrumb">
                 <li>
                     <a href="{{URL('admin')}}">首页</a>
-                </li>
+                </li> 
                 <li>
                     <strong>系统配置</strong>
                 </li>
@@ -35,31 +38,27 @@
 							
                         <div class="ibox-content">
                             <form class="form-horizontal"  action="javascript:;" id="save_form">
-                                <div class="hr-line-dashed"></div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">文章标题：</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="art_title" >
-                                        <span class="help-block m-b-none"><i class="fa fa-info-circle">&nbsp</i>前台页面显示的标题</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="hr-line-dashed"></div>
-
-                                <div class="form-group">
-                                        <div class="col-sm-4 col-sm-offset-3">
-                                            <button class="btn btn-primary" href="javascript: ;" type="submit" id="save"><i class="fa fa-save"></i> 保存信息</button>&nbsp;&nbsp;&nbsp;
-                                            <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
-                                        </div>
-                                </div>
-
+                                <table class="table table-bordered" id="users-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>文章标题</th>
+                                            <th>文章分类</th>
+                                            <th>文章封面</th>
+                                            <th>浏览量</th>
+                                            <th>创建时间</th>
+                                            <th>修改时间</th>
+                                            <th>状态</th>
+                                            <th>是否推荐</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </form>
                         </div>
                     </div>
             </div>
         </div>
-
     </div>
     <!-- 主体内容（结束） -->
     
@@ -70,8 +69,26 @@
 
 
 @section('myjs')
+ <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script>
-        
+         $('#users-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{URL("admin/article/listarticle")}}',
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'title', name: 'title',searchable: true },
+                { data: 'cate_id', name: 'cate_id' },
+                { data: 'photo', name: 'photo' },
+                { data: 'views', name: 'views' },
+                { data: 'created_at', name: 'created_at' },
+                { data: 'updated_at', name: 'updated_at' },
+                { data: 'status', name: 'status' },
+                { data: 'is_tui', name: 'is_tui' },
+                { data: 'action', name: 'action' ,searchable: true},
+            ]
+        });
+
         $('#save').click(function(){
 
             var oTitle = $("#art_title");
@@ -80,7 +97,7 @@
             var oContent = $("#art_content");
 
             $.ajax({
-            url: '/admin/article/add',
+            url: '/admin/article/details',
             type: 'POST',
             dataType: 'json',
             cache: false,
@@ -102,8 +119,6 @@
             }
         });
         });
-
-
 
    
 </script>
