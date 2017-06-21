@@ -1,9 +1,29 @@
 @extends('admin.layouts.app')
 @section('title', '添加文章')
 
+@section('mycss')
+<!-- 自定义CSS -->
+<style>
+thead th{
+    font-size: 15px;
+    font-weight: bold;
+
+} 
+th{
+    height: 50px;
+    font-size: 14px;
+    font-weight: normal;
+}
+th img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+</style>
+@endsection
+
 @section('content')
- <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
- <!-- <link rel="stylesheet" href="http://www.datatable.com/css/app.css"> -->
 
 <!-- 主要内容（开始） -->
     <!-- 顶部路径提示（开始） -->
@@ -30,31 +50,87 @@
     
         <div class="row white-bg ">
             <div class="col-lg-12">
-                    
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>添加文章<small>...</small></h5>
+                            <h5>文章列表<small>...</small></h5>
                         </div>
 							
                         <div class="ibox-content">
-                            <form class="form-horizontal"  action="javascript:;" id="save_form">
-                                <table class="table table-bordered" id="users-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>文章标题</th>
-                                            <th>文章分类</th>
-                                            <th>文章封面</th>
-                                            <th>浏览量</th>
-                                            <th>创建时间</th>
-                                            <th>修改时间</th>
-                                            <th>状态</th>
-                                            <th>是否推荐</th>
-                                            <th>操作</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </form>
+                           
+                             
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="long-tr">
+                                    <th>Id</th>
+                                    <th>文章标题</th>
+                                    <th>文章分类</th>
+                                    <th>文章封面</th>
+                                    <th>浏览量</th>
+                                    <th>创建时间</th>
+                                    <th>修改时间</th>
+                                    <th>状态</th>
+                                    <th>是否推荐</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody id="list-content">
+                                <tr>
+                                    <th>1</th>
+                                    <th>PHP实现时间轴函数</th>
+                                    <th>PHP</th>
+                                    <th><img src="{{URL('style/admin/img/a1.jpg')}}" alt=""></th>
+                                    <th>1</th>
+                                    <th>2016-01-04 12:45:38</th>
+                                    <th>2017-06-06 07:50:52</th>
+                                    <th><span class="label label-danger">禁用</span></th>
+                                    <th>是</th>
+                                    <th>
+                                        <a href="javascript:;" onclick="" class="btn btn-primary btn-xs btn-outline">
+                                            <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                        <a href="javascript:;" onclick="" class="btn btn-danger btn-xs btn-outline">
+                                            <i class="fa fa-trash-o"></i> 删除</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>PHP实现时间轴函数</th>
+                                    <th>PHP</th>
+                                    <th><img src="{{URL('style/admin/img/a2.jpg')}}" alt=""></th>
+                                    <th>1</th>
+                                    <th>2016-01-04 12:45:38</th>
+                                    <th>2017-06-06 07:50:52</th>
+                                    <th><span class="label label-info">开启</span></th>
+                                    <th>是</th>
+                                    <th>
+                                        <a href="javascript:;" onclick="" class="btn btn-primary btn-xs btn-outline">
+                                            <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                        <a href="javascript:;" onclick="" class="btn btn-danger btn-xs btn-outline">
+                                            <i class="fa fa-trash-o"></i> 删除</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>PHP实现时间轴函数</th>
+                                    <th>PHP</th>
+                                    <th><img src="{{URL('style/admin/img/a3.jpg')}}" alt=""></th>
+                                    <th>1</th>
+                                    <th>2016-01-04 12:45:38</th>
+                                    <th>2017-06-06 07:50:52</th>
+                                    <th><span class="label label-danger">禁用</span></th>
+                                    <th>是</th>
+                                    <th>
+                                        <a href="javascript:;" onclick="" class="btn btn-primary btn-xs btn-outline">
+                                            <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                        <a href="javascript:;" onclick="" class="btn btn-danger btn-xs btn-outline">
+                                            <i class="fa fa-trash-o"></i> 删除</a>
+                                    </th>
+                                </tr>
+    
+
+                            </tbody>
+                        </table>
+                           
                         </div>
                     </div>
             </div>
@@ -69,25 +145,8 @@
 
 
 @section('myjs')
- <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script>
-         $('#users-table').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: '{{URL("admin/article/listarticle")}}',
-            columns: [
-                { data: 'id', name: 'id' },
-                { data: 'title', name: 'title',searchable: true },
-                { data: 'cate_id', name: 'cate_id' },
-                { data: 'photo', name: 'photo' },
-                { data: 'views', name: 'views' },
-                { data: 'created_at', name: 'created_at' },
-                { data: 'updated_at', name: 'updated_at' },
-                { data: 'status', name: 'status' },
-                { data: 'is_tui', name: 'is_tui' },
-                { data: 'action', name: 'action' ,searchable: true},
-            ]
-        });
+        
 
         $('#save').click(function(){
 

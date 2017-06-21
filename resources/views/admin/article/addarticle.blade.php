@@ -2,6 +2,9 @@
 @section('title', '添加文章')
 
 @section('content')
+
+<link rel="stylesheet" href="{{URL('vendor\editormd\css\editormd.css')}}">
+
 <!-- 主要内容（开始） -->
     <!-- 顶部路径提示（开始） -->
     <div class="row wrapper border-bottom white-bg page-heading">
@@ -47,13 +50,13 @@
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
-                                <label class="col-sm-2 control-label">所属分类</label>
+                                <label class="col-sm-2 control-label">{{$cate[1]['name']}}</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control m-b" id="art_category" name="account">
-                                            <option>PHP</option>
-                                            <option>laravel</option>
-                                            <option> Java</option>
-                                            <option>Python</option>
+                                        <select class="form-control m-b" id="art_category">
+                                            <option name={{$cate[0]['id']}}>{{$cate[0]['name']}}</option>
+                                            <option name={{$cate[1]['id']}}>{{$cate[1]['name']}}</option>
+                                            <option name={{$cate[2]['id']}}>{{$cate[2]['name']}}</option>
+                                            <option name={{$cate[3]['id']}}>{{$cate[3]['name']}}</option>
                                         </select> 
                                     </div>
                                 </div>
@@ -70,9 +73,11 @@
                                 <div class="hr-line-dashed"></div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">内容：</label>
-                                    <div class="col-sm-10">
-                                       <textarea type="text" id="art_content" rows="5" name="remark" id="remark" placeholder="内容" class="form-control"></textarea>
+                                    <!-- <label class="col-sm-2 control-label">内容：</label> -->
+                                    <div class="col-sm-12">
+                                        <div id="editormd"> 
+                                           <textarea type="text" id="art_content" rows="5" name="remark" id="remark" placeholder="内容" class="form-control"></textarea>
+                                        </div>    
                                     </div>
                                 </div>
                                <div class="form-group">
@@ -102,16 +107,56 @@
 
 
 @section('myjs')
+<script src="{{URL('vendor\editormd\js\editormd.js')}}"></script>
 <script>
         
+ $(function() {
+        var testEditor;
+        testEditor = editormd("editormd", {
+            width  : "90%",
+                height : 720,
+                path   : '/vendor/editormd/lib/',
+                // markdown : md,
+                codeFold : true,
+                searchReplace : true,
+                saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                //watch : false,
+                htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+                emoji : true,
+                taskList : true,
+                tocm            : true,         // Using [TOCM]
+                tex : true,                     // 开启科学公式 TeX 语言支持，默认关闭
+                //previewCodeHighlight : false,  // 关闭预览窗口的代码高亮，默认开启
+                flowChart : true,  
+                sequenceDiagram : true,         // 同上
+                onload : function() {
+                    // console.log("onload =>", this, this.id, this.settings);
+                }
+        });
+
+
+
+
         $('#save').click(function(){
 
-            var oTitle = $("#art_title");
-            var oCategory = $('#art_category');
-            var oKeywords = $("#art_keywords");
-            var oContent = $("#art_content");
+        var oTitle = $("#art_title");
+        var oCategory = $('#art_category option:selected');
+        var oKeywords = $("#art_keywords");
+        var cContent = testEditor.getHTML();
 
-            $.ajax({
+        if ( $("#art_title").val() === "" ){  
+            alert('文章标题不能为空');
+            return false;
+        }
+
+        if ( cContent === "" ){  
+            alert('文章内容不能为空');
+            return false;
+        }
+
+        
+
+        $.ajax({
             url: '/admin/article/addarticle',
             type: 'POST',
             dataType: 'json',
@@ -119,21 +164,38 @@
             data: {
                 title: oTitle.val(),
                 keywords: oKeywords.val(),
-                content: oContent.val(),
+                content: cContent,
+                category: oCategory.attr('name'),
                 _token: "{{csrf_token()}}"
             },
             success: function(data) {
                 if (data.status != 0){
                     alert(data.message);
                 }else{
-                   console.log(data);
+                   alert('文章保存成功');
                 }
             },
             error: function(data) {
                 alert("错误");
             }
         });
-        });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
 
 
 

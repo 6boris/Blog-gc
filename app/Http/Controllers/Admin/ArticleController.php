@@ -7,25 +7,23 @@ use App\Http\Controllers\Controller;
 use App\Entity\MS_Result;
 use App\Model\Article;
 use Datatables;
+use App\Model\ArticleCate;
 
 /**
  *      文章类
  */
 class ArticleController extends Controller
 {
-    public function index(){
-        return view('admin.article.index');
+    public function index(){ 
+         $art = new Article();
+        $res = $art->all();
+        dd($res);
     }
 
     public function listarticle(){
         $art = new Article();
         $res = $art->all();
-        return DataTables::of($res)
-        ->editColumn('action', function ($res) {
-                return '<a href="article/edit/?id='.$res->id.'" class="btn btn-primary btn-xs btn-outline"><i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;<a href="article/del/?id='.$res->id.'" class="btn btn-danger btn-xs btn-outline"><i class="fa fa-trash-o"></i> 删除</a>';
-            })
-        ->removeColumn('status')
-        ->make(true);
+        
     }
 
     public function edit(Request $request){
@@ -36,7 +34,6 @@ class ArticleController extends Controller
     }
 
     public function add(Request $request){
-        
         if ( $request->ajax() && $request->isMethod('post')){
 
             // 实例化返回结果
@@ -46,7 +43,7 @@ class ArticleController extends Controller
 
             $art = new Article();
             $art->title = $request->input('title');
-            $art->cate_id = 1;
+            $art->cate_id = $request->input('category');
             $art->keywords = $request->input('keywords');
             $art->content = $request->input('content');
             $art->save();
@@ -54,7 +51,12 @@ class ArticleController extends Controller
             return $res->toJson();
         }
 
-        return view('admin.article.addarticle');
+        $art_cate = new ArticleCate(); 
+
+        $art_cate_res = $art_cate->where('status',1)->get(array('id','name'));
+
+
+        return view('admin.article.addarticle')->with('cate',$art_cate_res);
     }
 
 }

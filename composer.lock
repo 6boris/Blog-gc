@@ -4,8 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1edd02e6c512bf165af20eae4e17dce2",
+    "content-hash": "383e8b7e4f1c4be998f93f85738b8f33",
     "packages": [
+        {
+            "name": "barryvdh/laravel-debugbar",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-debugbar.git",
+                "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/barryvdh/laravel-debugbar/de15d00a74696db62e1b4782474c27ed0c4fc763.zip",
+                "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+                "maximebf/debugbar": "~1.13.0",
+                "php": ">=5.5.9",
+                "symfony/finder": "~2.7|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvdh\\Debugbar\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Debugbar": "Barryvdh\\Debugbar\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Debugbar\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "PHP Debugbar integration for Laravel",
+            "keywords": [
+                "debug",
+                "debugbar",
+                "laravel",
+                "profiler",
+                "webprofiler"
+            ],
+            "time": "2017-06-01T17:46:08+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -295,16 +357,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.25",
+            "version": "v5.4.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a"
+                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/laravel/framework/6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a.zip",
-                "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a",
+                "url": "https://files.phpcomposer.com/files/laravel/framework/a7ebbfab64111e24f8e584db64e2be9279ded357.zip",
+                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +482,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-07T13:35:12+00:00"
+            "time": "2017-06-13T18:58:49+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -486,39 +548,26 @@
             "time": "2017-06-01T16:31:26+00:00"
         },
         {
-            "name": "laravelcollective/html",
-            "version": "v5.4.8",
+            "name": "laravelchen/laravel-editormd",
+            "version": "2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5"
+                "url": "https://github.com/LaravelChen/laravel-editormd.git",
+                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/LaravelCollective/html/9b8f51e7a2368911c896f5d42757886bae0717b5.zip",
-                "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5",
+                "url": "https://files.phpcomposer.com/files/LaravelChen/laravel-editormd/5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a.zip",
+                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
                 "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "5.4.*",
-                "illuminate/routing": "5.4.*",
-                "illuminate/session": "5.4.*",
-                "illuminate/support": "5.4.*",
-                "illuminate/view": "5.4.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "illuminate/database": "5.4.*",
-                "mockery/mockery": "~0.9.4",
-                "phpunit/phpunit": "~5.4"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Collective\\Html\\": "src/"
+                    "LaravelChen\\Editormd\\": "src/"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/helper.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -527,17 +576,12 @@
             ],
             "authors": [
                 {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                },
-                {
-                    "name": "Adam Engebretson",
-                    "email": "adam@laravelcollective.com"
+                    "name": "LaravelChen",
+                    "email": "848407695@qq.com"
                 }
             ],
-            "description": "HTML and Form Builders for the Laravel Framework",
-            "homepage": "http://laravelcollective.com",
-            "time": "2017-05-22T06:35:07+00:00"
+            "description": "laravel-editor-mb",
+            "time": "2017-03-25T04:20:03+00:00"
         },
         {
             "name": "league/flysystem",
@@ -689,6 +733,67 @@
                 "laravel"
             ],
             "time": "2017-04-04T18:28:12+00:00"
+        },
+        {
+            "name": "maximebf/debugbar",
+            "version": "1.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maximebf/php-debugbar.git",
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/maximebf/php-debugbar/afee79a236348e39a44cb837106b7c5b4897ac2a.zip",
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "^1.0",
+                "symfony/var-dumper": "^2.6|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "suggest": {
+                "kriswallsmith/assetic": "The best way to manage assets",
+                "monolog/monolog": "Log using Monolog",
+                "predis/predis": "Redis storage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DebugBar\\": "src/DebugBar/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                },
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Debug bar in the browser for php application",
+            "homepage": "https://github.com/maximebf/php-debugbar",
+            "keywords": [
+                "debug",
+                "debugbar"
+            ],
+            "time": "2017-01-05T08:46:19+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2229,121 +2334,6 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
-        },
-        {
-            "name": "yajra/laravel-datatables-html",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yajra/laravel-datatables-html/b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8.zip",
-                "reference": "b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8",
-                "shasum": ""
-            },
-            "require": {
-                "laravelcollective/html": "5.4.*",
-                "php": ">=5.6.4",
-                "yajra/laravel-datatables-oracle": "7.*"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "~5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yajra\\Datatables\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Arjay Angeles",
-                    "email": "aqangeles@gmail.com"
-                }
-            ],
-            "description": "Laravel DataTables HTML builder plugin for Laravel 5.4+.",
-            "keywords": [
-                "JS",
-                "datatables",
-                "html",
-                "jquery",
-                "laravel"
-            ],
-            "time": "2017-01-27T02:53:47+00:00"
-        },
-        {
-            "name": "yajra/laravel-datatables-oracle",
-            "version": "v7.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "edf2d782cc0b340876ecf6851a8f0de1c0e15a76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yajra/laravel-datatables/edf2d782cc0b340876ecf6851a8f0de1c0e15a76.zip",
-                "reference": "edf2d782cc0b340876ecf6851a8f0de1c0e15a76",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "5.4.*",
-                "illuminate/filesystem": "5.4.*",
-                "illuminate/http": "5.4.*",
-                "illuminate/support": "5.4.*",
-                "illuminate/view": "5.4.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "orchestra/testbench": "^3.4",
-                "phpunit/phpunit": "~5.7"
-            },
-            "suggest": {
-                "league/fractal": "Transform your api response into something you won't hate.",
-                "yajra/laravel-datatables-buttons": "Plugin for server-side exporting of dataTable.",
-                "yajra/laravel-datatables-html": "Plugin for server-side HTML builder of dataTable."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "7.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Yajra\\Datatables\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Arjay Angeles",
-                    "email": "aqangeles@gmail.com"
-                }
-            ],
-            "description": "jQuery DataTables API for Laravel 4|5",
-            "keywords": [
-                "datatables",
-                "jquery",
-                "laravel"
-            ],
-            "time": "2017-06-07T05:28:09+00:00"
         }
     ],
     "packages-dev": [

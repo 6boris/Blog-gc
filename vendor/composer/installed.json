@@ -1745,137 +1745,6 @@
         ]
     },
     {
-        "name": "laravel/framework",
-        "version": "v5.4.25",
-        "version_normalized": "5.4.25.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/laravel/framework/6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a.zip",
-            "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "erusev/parsedown": "~1.6",
-            "ext-mbstring": "*",
-            "ext-openssl": "*",
-            "league/flysystem": "~1.0",
-            "monolog/monolog": "~1.11",
-            "mtdowling/cron-expression": "~1.0",
-            "nesbot/carbon": "~1.20",
-            "paragonie/random_compat": "~1.4|~2.0",
-            "php": ">=5.6.4",
-            "ramsey/uuid": "~3.0",
-            "swiftmailer/swiftmailer": "~5.4",
-            "symfony/console": "~3.2",
-            "symfony/debug": "~3.2",
-            "symfony/finder": "~3.2",
-            "symfony/http-foundation": "~3.2",
-            "symfony/http-kernel": "~3.2",
-            "symfony/process": "~3.2",
-            "symfony/routing": "~3.2",
-            "symfony/var-dumper": "~3.2",
-            "tijsverkoyen/css-to-inline-styles": "~2.2",
-            "vlucas/phpdotenv": "~2.2"
-        },
-        "replace": {
-            "illuminate/auth": "self.version",
-            "illuminate/broadcasting": "self.version",
-            "illuminate/bus": "self.version",
-            "illuminate/cache": "self.version",
-            "illuminate/config": "self.version",
-            "illuminate/console": "self.version",
-            "illuminate/container": "self.version",
-            "illuminate/contracts": "self.version",
-            "illuminate/cookie": "self.version",
-            "illuminate/database": "self.version",
-            "illuminate/encryption": "self.version",
-            "illuminate/events": "self.version",
-            "illuminate/exception": "self.version",
-            "illuminate/filesystem": "self.version",
-            "illuminate/hashing": "self.version",
-            "illuminate/http": "self.version",
-            "illuminate/log": "self.version",
-            "illuminate/mail": "self.version",
-            "illuminate/notifications": "self.version",
-            "illuminate/pagination": "self.version",
-            "illuminate/pipeline": "self.version",
-            "illuminate/queue": "self.version",
-            "illuminate/redis": "self.version",
-            "illuminate/routing": "self.version",
-            "illuminate/session": "self.version",
-            "illuminate/support": "self.version",
-            "illuminate/translation": "self.version",
-            "illuminate/validation": "self.version",
-            "illuminate/view": "self.version",
-            "tightenco/collect": "self.version"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "~3.0",
-            "doctrine/dbal": "~2.5",
-            "mockery/mockery": "~0.9.4",
-            "pda/pheanstalk": "~3.0",
-            "phpunit/phpunit": "~5.7",
-            "predis/predis": "~1.0",
-            "symfony/css-selector": "~3.2",
-            "symfony/dom-crawler": "~3.2"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
-            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
-            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
-            "laravel/tinker": "Required to use the tinker console command (~1.0).",
-            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
-            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
-            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
-            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
-            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
-            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
-            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
-            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
-        },
-        "time": "2017-06-07T13:35:12+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/Illuminate/Foundation/helpers.php",
-                "src/Illuminate/Support/helpers.php"
-            ],
-            "psr-4": {
-                "Illuminate\\": "src/Illuminate/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Laravel Framework.",
-        "homepage": "https://laravel.com",
-        "keywords": [
-            "framework",
-            "laravel"
-        ]
-    },
-    {
         "name": "laravel/tinker",
         "version": "v1.0.1",
         "version_normalized": "1.0.1.0",
@@ -3769,39 +3638,277 @@
         ]
     },
     {
-        "name": "laravelcollective/html",
-        "version": "v5.4.8",
-        "version_normalized": "5.4.8.0",
+        "name": "laravelchen/laravel-editormd",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/LaravelCollective/html.git",
-            "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5"
+            "url": "https://github.com/LaravelChen/laravel-editormd.git",
+            "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/LaravelCollective/html/9b8f51e7a2368911c896f5d42757886bae0717b5.zip",
-            "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5",
+            "url": "https://files.phpcomposer.com/files/LaravelChen/laravel-editormd/5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a.zip",
+            "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
             "shasum": ""
         },
-        "require": {
-            "illuminate/http": "5.4.*",
-            "illuminate/routing": "5.4.*",
-            "illuminate/session": "5.4.*",
-            "illuminate/support": "5.4.*",
-            "illuminate/view": "5.4.*",
-            "php": ">=5.6.4"
-        },
-        "require-dev": {
-            "illuminate/database": "5.4.*",
-            "mockery/mockery": "~0.9.4",
-            "phpunit/phpunit": "~5.4"
-        },
-        "time": "2017-05-22T06:35:07+00:00",
+        "time": "2017-03-25T04:20:03+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Collective\\Html\\": "src/"
+                "LaravelChen\\Editormd\\": "src/"
+            },
+            "files": [
+                "src/helper.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "LaravelChen",
+                "email": "848407695@qq.com"
+            }
+        ],
+        "description": "laravel-editor-mb"
+    },
+    {
+        "name": "laravel/framework",
+        "version": "v5.4.26",
+        "version_normalized": "5.4.26.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/laravel/framework/a7ebbfab64111e24f8e584db64e2be9279ded357.zip",
+            "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "erusev/parsedown": "~1.6",
+            "ext-mbstring": "*",
+            "ext-openssl": "*",
+            "league/flysystem": "~1.0",
+            "monolog/monolog": "~1.11",
+            "mtdowling/cron-expression": "~1.0",
+            "nesbot/carbon": "~1.20",
+            "paragonie/random_compat": "~1.4|~2.0",
+            "php": ">=5.6.4",
+            "ramsey/uuid": "~3.0",
+            "swiftmailer/swiftmailer": "~5.4",
+            "symfony/console": "~3.2",
+            "symfony/debug": "~3.2",
+            "symfony/finder": "~3.2",
+            "symfony/http-foundation": "~3.2",
+            "symfony/http-kernel": "~3.2",
+            "symfony/process": "~3.2",
+            "symfony/routing": "~3.2",
+            "symfony/var-dumper": "~3.2",
+            "tijsverkoyen/css-to-inline-styles": "~2.2",
+            "vlucas/phpdotenv": "~2.2"
+        },
+        "replace": {
+            "illuminate/auth": "self.version",
+            "illuminate/broadcasting": "self.version",
+            "illuminate/bus": "self.version",
+            "illuminate/cache": "self.version",
+            "illuminate/config": "self.version",
+            "illuminate/console": "self.version",
+            "illuminate/container": "self.version",
+            "illuminate/contracts": "self.version",
+            "illuminate/cookie": "self.version",
+            "illuminate/database": "self.version",
+            "illuminate/encryption": "self.version",
+            "illuminate/events": "self.version",
+            "illuminate/exception": "self.version",
+            "illuminate/filesystem": "self.version",
+            "illuminate/hashing": "self.version",
+            "illuminate/http": "self.version",
+            "illuminate/log": "self.version",
+            "illuminate/mail": "self.version",
+            "illuminate/notifications": "self.version",
+            "illuminate/pagination": "self.version",
+            "illuminate/pipeline": "self.version",
+            "illuminate/queue": "self.version",
+            "illuminate/redis": "self.version",
+            "illuminate/routing": "self.version",
+            "illuminate/session": "self.version",
+            "illuminate/support": "self.version",
+            "illuminate/translation": "self.version",
+            "illuminate/validation": "self.version",
+            "illuminate/view": "self.version",
+            "tightenco/collect": "self.version"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~3.0",
+            "doctrine/dbal": "~2.5",
+            "mockery/mockery": "~0.9.4",
+            "pda/pheanstalk": "~3.0",
+            "phpunit/phpunit": "~5.7",
+            "predis/predis": "~1.0",
+            "symfony/css-selector": "~3.2",
+            "symfony/dom-crawler": "~3.2"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
+            "laravel/tinker": "Required to use the tinker console command (~1.0).",
+            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
+            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
+            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
+            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
+            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
+            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
+            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
+            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+        },
+        "time": "2017-06-13T18:58:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/Illuminate/Foundation/helpers.php",
+                "src/Illuminate/Support/helpers.php"
+            ],
+            "psr-4": {
+                "Illuminate\\": "src/Illuminate/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Laravel Framework.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "framework",
+            "laravel"
+        ]
+    },
+    {
+        "name": "maximebf/debugbar",
+        "version": "1.13.1",
+        "version_normalized": "1.13.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maximebf/php-debugbar.git",
+            "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/maximebf/php-debugbar/afee79a236348e39a44cb837106b7c5b4897ac2a.zip",
+            "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "^1.0",
+            "symfony/var-dumper": "^2.6|^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0"
+        },
+        "suggest": {
+            "kriswallsmith/assetic": "The best way to manage assets",
+            "monolog/monolog": "Log using Monolog",
+            "predis/predis": "Redis storage"
+        },
+        "time": "2017-01-05T08:46:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.13-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DebugBar\\": "src/DebugBar/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Maxime Bouroumeau-Fuseau",
+                "email": "maxime.bouroumeau@gmail.com",
+                "homepage": "http://maximebf.com"
+            },
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "Debug bar in the browser for php application",
+        "homepage": "https://github.com/maximebf/php-debugbar",
+        "keywords": [
+            "debug",
+            "debugbar"
+        ]
+    },
+    {
+        "name": "barryvdh/laravel-debugbar",
+        "version": "v2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-debugbar.git",
+            "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/barryvdh/laravel-debugbar/de15d00a74696db62e1b4782474c27ed0c4fc763.zip",
+            "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "maximebf/debugbar": "~1.13.0",
+            "php": ">=5.5.9",
+            "symfony/finder": "~2.7|~3.0"
+        },
+        "time": "2017-06-01T17:46:08+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Barryvdh\\Debugbar\\ServiceProvider"
+                ],
+                "aliases": {
+                    "Debugbar": "Barryvdh\\Debugbar\\Facade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Barryvdh\\Debugbar\\": "src/"
             },
             "files": [
                 "src/helpers.php"
@@ -3813,134 +3920,17 @@
         ],
         "authors": [
             {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            },
-            {
-                "name": "Adam Engebretson",
-                "email": "adam@laravelcollective.com"
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
             }
         ],
-        "description": "HTML and Form Builders for the Laravel Framework",
-        "homepage": "http://laravelcollective.com"
-    },
-    {
-        "name": "yajra/laravel-datatables-html",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yajra/laravel-datatables-html.git",
-            "reference": "b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/yajra/laravel-datatables-html/b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8.zip",
-            "reference": "b0d3abf53f3862cdceb4b8232dd9dc5bfb5a97e8",
-            "shasum": ""
-        },
-        "require": {
-            "laravelcollective/html": "5.4.*",
-            "php": ">=5.6.4",
-            "yajra/laravel-datatables-oracle": "7.*"
-        },
-        "require-dev": {
-            "mockery/mockery": "0.9.*",
-            "phpunit/phpunit": "~5.0"
-        },
-        "time": "2017-01-27T02:53:47+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Yajra\\Datatables\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Arjay Angeles",
-                "email": "aqangeles@gmail.com"
-            }
-        ],
-        "description": "Laravel DataTables HTML builder plugin for Laravel 5.4+.",
+        "description": "PHP Debugbar integration for Laravel",
         "keywords": [
-            "JS",
-            "datatables",
-            "html",
-            "jquery",
-            "laravel"
-        ]
-    },
-    {
-        "name": "yajra/laravel-datatables-oracle",
-        "version": "v7.7.0",
-        "version_normalized": "7.7.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yajra/laravel-datatables.git",
-            "reference": "edf2d782cc0b340876ecf6851a8f0de1c0e15a76"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/yajra/laravel-datatables/edf2d782cc0b340876ecf6851a8f0de1c0e15a76.zip",
-            "reference": "edf2d782cc0b340876ecf6851a8f0de1c0e15a76",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "5.4.*",
-            "illuminate/filesystem": "5.4.*",
-            "illuminate/http": "5.4.*",
-            "illuminate/support": "5.4.*",
-            "illuminate/view": "5.4.*",
-            "php": ">=5.6.4"
-        },
-        "require-dev": {
-            "mockery/mockery": "0.9.*",
-            "orchestra/testbench": "^3.4",
-            "phpunit/phpunit": "~5.7"
-        },
-        "suggest": {
-            "league/fractal": "Transform your api response into something you won't hate.",
-            "yajra/laravel-datatables-buttons": "Plugin for server-side exporting of dataTable.",
-            "yajra/laravel-datatables-html": "Plugin for server-side HTML builder of dataTable."
-        },
-        "time": "2017-06-07T05:28:09+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "7.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Yajra\\Datatables\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Arjay Angeles",
-                "email": "aqangeles@gmail.com"
-            }
-        ],
-        "description": "jQuery DataTables API for Laravel 4|5",
-        "keywords": [
-            "datatables",
-            "jquery",
-            "laravel"
+            "debug",
+            "debugbar",
+            "laravel",
+            "profiler",
+            "webprofiler"
         ]
     }
 ]

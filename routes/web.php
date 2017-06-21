@@ -53,7 +53,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 
 		Route::get('','ArticleController@index');
 		Route::get('listarticle','ArticleController@listarticle');
-		Route::any('addarticle','ArticleController@addarticle');
+		Route::any('addarticle','ArticleController@add');
 		Route::get('edit','ArticleController@edit');
 		Route::get('del','ArticleController@del');
 

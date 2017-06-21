@@ -8,7 +8,7 @@ use App\Entity\MS_Result;
 use App\Model\Admin;
 use App\Model\Article;
 use App\Model\ArticleCate;
-use Datatables;
+use LaravelChen\Editormd\EditorMdProvider;
 
 class DemoController extends Controller
 {
@@ -16,7 +16,12 @@ class DemoController extends Controller
 
 	
     public function index(){
-    	return view('admin.demo.index');
+    	
+        $cate = new  ArticleCate();
+
+        $res = $cate->where('status' , 1)->get(array('id','name'));
+       return "asd".$res;
+
     }
     public function details(){
         $art = new Article();

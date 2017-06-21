@@ -181,7 +181,8 @@ return [
          *  额外添加的拓展库
          * 
          */
-        
+      LaravelChen\Editormd\EditorMdProvider::class,
+      Barryvdh\Debugbar\ServiceProvider::class,
         
 
 
@@ -238,9 +239,7 @@ return [
         /*
          * 额外添加的拓展库
          */
-        
-
-
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
