@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,16 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         *  额外添加的拓展库
+         * 
+         */
+      LaravelChen\Editormd\EditorMdProvider::class,
+      Barryvdh\Debugbar\ServiceProvider::class,
+      GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        
+
+
     ],
 
     /*
@@ -226,6 +236,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+
+        /*
+         * 额外添加的拓展库
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
     ],
 
 ];

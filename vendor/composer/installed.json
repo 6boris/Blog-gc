@@ -1745,137 +1745,6 @@
         ]
     },
     {
-        "name": "laravel/framework",
-        "version": "v5.4.25",
-        "version_normalized": "5.4.25.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/laravel/framework/6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a.zip",
-            "reference": "6bcc9b1f542b3deed16d51f6aa1fe318ab407c2a",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "erusev/parsedown": "~1.6",
-            "ext-mbstring": "*",
-            "ext-openssl": "*",
-            "league/flysystem": "~1.0",
-            "monolog/monolog": "~1.11",
-            "mtdowling/cron-expression": "~1.0",
-            "nesbot/carbon": "~1.20",
-            "paragonie/random_compat": "~1.4|~2.0",
-            "php": ">=5.6.4",
-            "ramsey/uuid": "~3.0",
-            "swiftmailer/swiftmailer": "~5.4",
-            "symfony/console": "~3.2",
-            "symfony/debug": "~3.2",
-            "symfony/finder": "~3.2",
-            "symfony/http-foundation": "~3.2",
-            "symfony/http-kernel": "~3.2",
-            "symfony/process": "~3.2",
-            "symfony/routing": "~3.2",
-            "symfony/var-dumper": "~3.2",
-            "tijsverkoyen/css-to-inline-styles": "~2.2",
-            "vlucas/phpdotenv": "~2.2"
-        },
-        "replace": {
-            "illuminate/auth": "self.version",
-            "illuminate/broadcasting": "self.version",
-            "illuminate/bus": "self.version",
-            "illuminate/cache": "self.version",
-            "illuminate/config": "self.version",
-            "illuminate/console": "self.version",
-            "illuminate/container": "self.version",
-            "illuminate/contracts": "self.version",
-            "illuminate/cookie": "self.version",
-            "illuminate/database": "self.version",
-            "illuminate/encryption": "self.version",
-            "illuminate/events": "self.version",
-            "illuminate/exception": "self.version",
-            "illuminate/filesystem": "self.version",
-            "illuminate/hashing": "self.version",
-            "illuminate/http": "self.version",
-            "illuminate/log": "self.version",
-            "illuminate/mail": "self.version",
-            "illuminate/notifications": "self.version",
-            "illuminate/pagination": "self.version",
-            "illuminate/pipeline": "self.version",
-            "illuminate/queue": "self.version",
-            "illuminate/redis": "self.version",
-            "illuminate/routing": "self.version",
-            "illuminate/session": "self.version",
-            "illuminate/support": "self.version",
-            "illuminate/translation": "self.version",
-            "illuminate/validation": "self.version",
-            "illuminate/view": "self.version",
-            "tightenco/collect": "self.version"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "~3.0",
-            "doctrine/dbal": "~2.5",
-            "mockery/mockery": "~0.9.4",
-            "pda/pheanstalk": "~3.0",
-            "phpunit/phpunit": "~5.7",
-            "predis/predis": "~1.0",
-            "symfony/css-selector": "~3.2",
-            "symfony/dom-crawler": "~3.2"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
-            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
-            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
-            "laravel/tinker": "Required to use the tinker console command (~1.0).",
-            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
-            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
-            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
-            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
-            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
-            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
-            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
-            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
-        },
-        "time": "2017-06-07T13:35:12+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/Illuminate/Foundation/helpers.php",
-                "src/Illuminate/Support/helpers.php"
-            ],
-            "psr-4": {
-                "Illuminate\\": "src/Illuminate/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylor@laravel.com"
-            }
-        ],
-        "description": "The Laravel Framework.",
-        "homepage": "https://laravel.com",
-        "keywords": [
-            "framework",
-            "laravel"
-        ]
-    },
-    {
         "name": "laravel/tinker",
         "version": "v1.0.1",
         "version_normalized": "1.0.1.0",
@@ -3465,6 +3334,738 @@
             "phpunit",
             "testing",
             "xunit"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-util",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-util.git",
+            "reference": "ebccbde4aad410f6438d86d7d261c6b4d2b9a51d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-util/ebccbde4aad410f6438d86d7d261c6b4d2b9a51d.zip",
+            "reference": "ebccbde4aad410f6438d86d7d261c6b4d2b9a51d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2017-06-09T08:25:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Util\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony utilities for portability of PHP codes",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compat",
+            "compatibility",
+            "polyfill",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-php56",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-php56.git",
+            "reference": "bc0b7d6cb36b10cfabb170a3e359944a95174929"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-php56/bc0b7d6cb36b10cfabb170a3e359944a95174929.zip",
+            "reference": "bc0b7d6cb36b10cfabb170a3e359944a95174929",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/polyfill-util": "~1.0"
+        },
+        "time": "2017-06-09T08:25:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php56\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "jeremeamia/SuperClosure",
+        "version": "2.3.0",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremeamia/super_closure.git",
+            "reference": "443c3df3207f176a1b41576ee2a66968a507b3db"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/jeremeamia/super_closure/443c3df3207f176a1b41576ee2a66968a507b3db.zip",
+            "reference": "443c3df3207f176a1b41576ee2a66968a507b3db",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "^1.2|^2.0|^3.0",
+            "php": ">=5.4",
+            "symfony/polyfill-php56": "^1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0"
+        },
+        "time": "2016-12-07T09:37:55+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SuperClosure\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Lindblom",
+                "email": "jeremeamia@gmail.com",
+                "homepage": "https://github.com/jeremeamia",
+                "role": "Developer"
+            }
+        ],
+        "description": "Serialize Closure objects, including their context and binding",
+        "homepage": "https://github.com/jeremeamia/super_closure",
+        "keywords": [
+            "closure",
+            "function",
+            "lambda",
+            "parser",
+            "serializable",
+            "serialize",
+            "tokenizer"
+        ]
+    },
+    {
+        "name": "phpoffice/phpexcel",
+        "version": "1.8.1",
+        "version_normalized": "1.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHPOffice/PHPExcel.git",
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/PHPOffice/PHPExcel/372c7cbb695a6f6f1e62649381aeaa37e7e70b32.zip",
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+            "shasum": ""
+        },
+        "require": {
+            "ext-xml": "*",
+            "ext-xmlwriter": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2015-05-01T07:00:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPExcel": "Classes/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Maarten Balliauw",
+                "homepage": "http://blog.maartenballiauw.be"
+            },
+            {
+                "name": "Mark Baker"
+            },
+            {
+                "name": "Franck Lefevre",
+                "homepage": "http://blog.rootslabs.net"
+            },
+            {
+                "name": "Erik Tilt"
+            }
+        ],
+        "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+        "homepage": "http://phpexcel.codeplex.com",
+        "keywords": [
+            "OpenXML",
+            "excel",
+            "php",
+            "spreadsheet",
+            "xls",
+            "xlsx"
+        ]
+    },
+    {
+        "name": "maatwebsite/excel",
+        "version": "2.1.17",
+        "version_normalized": "2.1.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
+            "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/Maatwebsite/Laravel-Excel/14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d.zip",
+            "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/cache": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "jeremeamia/superclosure": "^2.3",
+            "nesbot/carbon": "~1.0",
+            "php": ">=5.5",
+            "phpoffice/phpexcel": "1.8.*",
+            "tijsverkoyen/css-to-inline-styles": "~2.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "orchestra/testbench": "3.1.*",
+            "phpseclib/phpseclib": "~1.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "illuminate/http": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*"
+        },
+        "time": "2017-04-04T18:28:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/Maatwebsite/Excel"
+            ],
+            "psr-0": {
+                "Maatwebsite\\Excel\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Maatwebsite.nl",
+                "email": "patrick@maatwebsite.nl"
+            }
+        ],
+        "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel",
+        "keywords": [
+            "PHPExcel",
+            "batch",
+            "csv",
+            "excel",
+            "export",
+            "import",
+            "laravel"
+        ]
+    },
+    {
+        "name": "laravelchen/laravel-editormd",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelChen/laravel-editormd.git",
+            "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/LaravelChen/laravel-editormd/5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a.zip",
+            "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
+            "shasum": ""
+        },
+        "time": "2017-03-25T04:20:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LaravelChen\\Editormd\\": "src/"
+            },
+            "files": [
+                "src/helper.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "LaravelChen",
+                "email": "848407695@qq.com"
+            }
+        ],
+        "description": "laravel-editor-mb"
+    },
+    {
+        "name": "laravel/framework",
+        "version": "v5.4.26",
+        "version_normalized": "5.4.26.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/laravel/framework/a7ebbfab64111e24f8e584db64e2be9279ded357.zip",
+            "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "erusev/parsedown": "~1.6",
+            "ext-mbstring": "*",
+            "ext-openssl": "*",
+            "league/flysystem": "~1.0",
+            "monolog/monolog": "~1.11",
+            "mtdowling/cron-expression": "~1.0",
+            "nesbot/carbon": "~1.20",
+            "paragonie/random_compat": "~1.4|~2.0",
+            "php": ">=5.6.4",
+            "ramsey/uuid": "~3.0",
+            "swiftmailer/swiftmailer": "~5.4",
+            "symfony/console": "~3.2",
+            "symfony/debug": "~3.2",
+            "symfony/finder": "~3.2",
+            "symfony/http-foundation": "~3.2",
+            "symfony/http-kernel": "~3.2",
+            "symfony/process": "~3.2",
+            "symfony/routing": "~3.2",
+            "symfony/var-dumper": "~3.2",
+            "tijsverkoyen/css-to-inline-styles": "~2.2",
+            "vlucas/phpdotenv": "~2.2"
+        },
+        "replace": {
+            "illuminate/auth": "self.version",
+            "illuminate/broadcasting": "self.version",
+            "illuminate/bus": "self.version",
+            "illuminate/cache": "self.version",
+            "illuminate/config": "self.version",
+            "illuminate/console": "self.version",
+            "illuminate/container": "self.version",
+            "illuminate/contracts": "self.version",
+            "illuminate/cookie": "self.version",
+            "illuminate/database": "self.version",
+            "illuminate/encryption": "self.version",
+            "illuminate/events": "self.version",
+            "illuminate/exception": "self.version",
+            "illuminate/filesystem": "self.version",
+            "illuminate/hashing": "self.version",
+            "illuminate/http": "self.version",
+            "illuminate/log": "self.version",
+            "illuminate/mail": "self.version",
+            "illuminate/notifications": "self.version",
+            "illuminate/pagination": "self.version",
+            "illuminate/pipeline": "self.version",
+            "illuminate/queue": "self.version",
+            "illuminate/redis": "self.version",
+            "illuminate/routing": "self.version",
+            "illuminate/session": "self.version",
+            "illuminate/support": "self.version",
+            "illuminate/translation": "self.version",
+            "illuminate/validation": "self.version",
+            "illuminate/view": "self.version",
+            "tightenco/collect": "self.version"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~3.0",
+            "doctrine/dbal": "~2.5",
+            "mockery/mockery": "~0.9.4",
+            "pda/pheanstalk": "~3.0",
+            "phpunit/phpunit": "~5.7",
+            "predis/predis": "~1.0",
+            "symfony/css-selector": "~3.2",
+            "symfony/dom-crawler": "~3.2"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
+            "laravel/tinker": "Required to use the tinker console command (~1.0).",
+            "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+            "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
+            "nexmo/client": "Required to use the Nexmo transport (~1.0).",
+            "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
+            "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
+            "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
+            "symfony/css-selector": "Required to use some of the crawler integration testing tools (~3.2).",
+            "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~3.2).",
+            "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+        },
+        "time": "2017-06-13T18:58:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/Illuminate/Foundation/helpers.php",
+                "src/Illuminate/Support/helpers.php"
+            ],
+            "psr-4": {
+                "Illuminate\\": "src/Illuminate/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Laravel Framework.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "framework",
+            "laravel"
+        ]
+    },
+    {
+        "name": "maximebf/debugbar",
+        "version": "1.13.1",
+        "version_normalized": "1.13.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maximebf/php-debugbar.git",
+            "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/maximebf/php-debugbar/afee79a236348e39a44cb837106b7c5b4897ac2a.zip",
+            "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "^1.0",
+            "symfony/var-dumper": "^2.6|^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0"
+        },
+        "suggest": {
+            "kriswallsmith/assetic": "The best way to manage assets",
+            "monolog/monolog": "Log using Monolog",
+            "predis/predis": "Redis storage"
+        },
+        "time": "2017-01-05T08:46:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.13-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DebugBar\\": "src/DebugBar/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Maxime Bouroumeau-Fuseau",
+                "email": "maxime.bouroumeau@gmail.com",
+                "homepage": "http://maximebf.com"
+            },
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "Debug bar in the browser for php application",
+        "homepage": "https://github.com/maximebf/php-debugbar",
+        "keywords": [
+            "debug",
+            "debugbar"
+        ]
+    },
+    {
+        "name": "barryvdh/laravel-debugbar",
+        "version": "v2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-debugbar.git",
+            "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/barryvdh/laravel-debugbar/de15d00a74696db62e1b4782474c27ed0c4fc763.zip",
+            "reference": "de15d00a74696db62e1b4782474c27ed0c4fc763",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+            "maximebf/debugbar": "~1.13.0",
+            "php": ">=5.5.9",
+            "symfony/finder": "~2.7|~3.0"
+        },
+        "time": "2017-06-01T17:46:08+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Barryvdh\\Debugbar\\ServiceProvider"
+                ],
+                "aliases": {
+                    "Debugbar": "Barryvdh\\Debugbar\\Facade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Barryvdh\\Debugbar\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "PHP Debugbar integration for Laravel",
+        "keywords": [
+            "debug",
+            "debugbar",
+            "laravel",
+            "profiler",
+            "webprofiler"
+        ]
+    },
+    {
+        "name": "league/commonmark",
+        "version": "0.15.4",
+        "version_normalized": "0.15.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/commonmark.git",
+            "reference": "c4c8e6bf99e62d9568875d9fc3ef473fe3e18e0c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/thephpleague/commonmark/c4c8e6bf99e62d9568875d9fc3ef473fe3e18e0c.zip",
+            "reference": "c4c8e6bf99e62d9568875d9fc3ef473fe3e18e0c",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4.8"
+        },
+        "replace": {
+            "colinodell/commonmark-php": "*"
+        },
+        "require-dev": {
+            "cebe/markdown": "~1.0",
+            "erusev/parsedown": "~1.0",
+            "jgm/commonmark": "0.27",
+            "michelf/php-markdown": "~1.4",
+            "mikehaertl/php-shellcommand": "~1.2.0",
+            "phpunit/phpunit": "~4.3|~5.0",
+            "scrutinizer/ocular": "~1.1",
+            "symfony/finder": "~2.3|~3.0"
+        },
+        "suggest": {
+            "league/commonmark-extras": "Library of useful extensions including smart punctuation"
+        },
+        "time": "2017-05-09T12:47:53+00:00",
+        "bin": [
+            "bin/commonmark"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.16-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\CommonMark\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Colin O'Dell",
+                "email": "colinodell@gmail.com",
+                "homepage": "https://www.colinodell.com",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Markdown parser for PHP based on the CommonMark spec",
+        "homepage": "https://github.com/thephpleague/commonmark",
+        "keywords": [
+            "commonmark",
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "graham-campbell/markdown",
+        "version": "v7.1.0",
+        "version_normalized": "7.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
+            "reference": "507783993b40f4b118f201e8a8bec9e908b3ab1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/GrahamCampbell/Laravel-Markdown/507783993b40f4b118f201e8a8bec9e908b3ab1d.zip",
+            "reference": "507783993b40f4b118f201e8a8bec9e908b3ab1d",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/view": "5.1.*|5.2.*|5.3.*|5.4.*",
+            "league/commonmark": "^0.15",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "graham-campbell/testbench": "^3.1",
+            "league/commonmark-extras": "^0.1.2",
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^4.8|^5.0"
+        },
+        "time": "2017-01-01T13:30:44+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "7.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GrahamCampbell\\Markdown\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Graham Campbell",
+                "email": "graham@alt-three.com"
+            }
+        ],
+        "description": "Markdown Is A CommonMark Wrapper For Laravel 5",
+        "keywords": [
+            "Graham Campbell",
+            "GrahamCampbell",
+            "Laravel Markdown",
+            "Laravel-Markdown",
+            "common mark",
+            "commonmark",
+            "framework",
+            "laravel",
+            "markdown"
         ]
     }
 ]

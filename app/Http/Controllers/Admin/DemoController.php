@@ -4,34 +4,32 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Datatables;
-use App\Demo as Demo;
-use DB;
+use App\Entity\MS_Result;
+use App\Model\Admin;
+use App\Model\Article;
+use App\Model\ArticleCate;
+use LaravelChen\Editormd\EditorMdProvider;
+use Markdown;
 
 class DemoController extends Controller
 {
+
+
+	
     public function index(){
+    	$art = new Article();
 
-        $user = new Demo();
-        $user->name = "123";
-        $Arr[10] =array();
-//        DB::table('user')->insert(array(
-//            array('name' => 'taylor@example.com'),
-//            array('name' => 'dayle@example.com'),
-//        ));
+        $resCon = $art->where('id',111)->get(array('content'))[0]->content;
+        // $art_cate = new ArticleCate(); 
 
-        for ($x=0; $x<=10000; $x++) {
-            $name = 'name'.(string)$x;
-            $Arr[$x] = array(
-                'name' => $name,
-            );
-        }
+        // $art_cate_res = $art_cate->where('status',1)->get(array('id','name'));
+        // dd($resCon);
+        $res = Markdown::convertToHtml($resCon);
+        return view('admin.demo')->with('content',$resCon);
 
 
-
-//        $res = $user->save($Arr);
-        $res = DB::table('user')->insert($Arr);
-
-    	dd($res);
+        
     }
+
+
 }
