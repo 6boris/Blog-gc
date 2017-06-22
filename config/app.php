@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +183,7 @@ return [
          */
       LaravelChen\Editormd\EditorMdProvider::class,
       Barryvdh\Debugbar\ServiceProvider::class,
+      GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         
 
 
@@ -240,6 +241,7 @@ return [
          * 额外添加的拓展库
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
     ],
 
 ];

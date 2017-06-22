@@ -75,14 +75,37 @@ th img{
                             </thead>
                            
                             <tbody id="list-content">
+                                @foreach ($art as $art)
                                 <tr>
-                                    <th>1</th>
-                                    <th>PHP实现时间轴函数</th>
-                                    <th>PHP</th>
+                                    <th>{{$art->id}}</th>
+                                    <th>{{$art->title}}</th>
+                                    <th>{{$art->cate_id}}</th>
                                     <th><img src="{{URL('style/admin/img/a1.jpg')}}" alt=""></th>
-                                    <th>1</th>
-                                    <th>2016-01-04 12:45:38</th>
-                                    <th>2017-06-06 07:50:52</th>
+                                    <th>{{$art->views}}</th>
+                                    <th>{{$art->created_at}}</th>
+                                    <th>{{$art->updated_at}}</th>
+                                    <th><span class="label label-danger">禁用</span></th>
+                                    <th>是</th>
+                                    <th>
+                                        <a href="javascript:;" onclick="" class="btn btn-primary btn-xs btn-outline">
+                                            <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                        <a href="javascript:;" onclick="" class="btn btn-danger btn-xs btn-outline">
+                                            <i class="fa fa-trash-o"></i> 删除</a>
+                                    </th>
+                                </tr>
+                                @endforeach
+
+
+                    
+
+                                <tr>
+                                    <th>{{$art[0]->id}}</th>
+                                    <th>{{$art[0]->title}}</th>
+                                    <th>{{$art[0]->cate_id}}</th>
+                                    <th><img src="{{URL('style/admin/img/a1.jpg')}}" alt=""></th>
+                                    <th>{{$art[0]->views}}</th>
+                                    <th>{{$art[0]->created_at}}</th>
+                                    <th>{{$art[0]->updated_at}}</th>
                                     <th><span class="label label-danger">禁用</span></th>
                                     <th>是</th>
                                     <th>

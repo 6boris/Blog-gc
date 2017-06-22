@@ -142,7 +142,7 @@
         var oTitle = $("#art_title");
         var oCategory = $('#art_category option:selected');
         var oKeywords = $("#art_keywords");
-        var cContent = testEditor.getHTML();
+        var cContent = testEditor.getMarkdown();
 
         if ( $("#art_title").val() === "" ){  
             alert('文章标题不能为空');

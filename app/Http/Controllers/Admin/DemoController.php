@@ -9,6 +9,7 @@ use App\Model\Admin;
 use App\Model\Article;
 use App\Model\ArticleCate;
 use LaravelChen\Editormd\EditorMdProvider;
+use Markdown;
 
 class DemoController extends Controller
 {
@@ -16,28 +17,19 @@ class DemoController extends Controller
 
 	
     public function index(){
-    	
-        $cate = new  ArticleCate();
+    	$art = new Article();
 
-        $res = $cate->where('status' , 1)->get(array('id','name'));
-       return "asd".$res;
+        $resCon = $art->where('id',111)->get(array('content'))[0]->content;
+        // $art_cate = new ArticleCate(); 
 
-    }
-    public function details(){
-        $art = new Article();
-        $res = $art->all();
-        return DataTables::of($res)->make(true);
-    }
-    public function getRowDetails()
-    {
-        return view('admin.demo.index');
+        // $art_cate_res = $art_cate->where('status',1)->get(array('id','name'));
+        // dd($resCon);
+        $res = Markdown::convertToHtml($resCon);
+        return view('admin.demo')->with('content',$resCon);
+
+
+        
     }
 
-    public function getRowDetailsData()
-    {
-        $users = User::select(['id', 'name', 'email', 'created_at', 'updated_at']);
-
-        return Datatables::of($users)->make(true);
-    }
 
 }

@@ -8,6 +8,7 @@ use App\Entity\MS_Result;
 use App\Model\Article;
 use Datatables;
 use App\Model\ArticleCate;
+use DB;
 
 /**
  *      文章类
@@ -15,9 +16,10 @@ use App\Model\ArticleCate;
 class ArticleController extends Controller
 {
     public function index(){ 
-         $art = new Article();
-        $res = $art->all();
-        dd($res);
+        dd(Pagination());
+        $art = Article::all()->paginate(15);
+        dd($art);
+        return view('admin.article.index')->with('art',$art);
     }
 
     public function listarticle(){
