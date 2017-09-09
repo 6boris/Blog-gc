@@ -44,7 +44,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Shell extends Application
 {
-    const VERSION = 'v0.8.6';
+    const VERSION = 'v0.8.11';
 
     const PROMPT      = '>>> ';
     const BUFF_PROMPT = '... ';
@@ -65,6 +65,7 @@ class Shell extends Application
     private $outputWantsNewline = false;
     private $completion;
     private $tabCompletionMatchers = array();
+    private $stdoutBuffer;
 
     /**
      * Create a new Psy Shell.
@@ -80,6 +81,7 @@ class Shell extends Application
         $this->includes = array();
         $this->readline = $this->config->getReadline();
         $this->inputBuffer = array();
+        $this->stdoutBuffer = '';
 
         parent::__construct('Psy Shell', self::VERSION);
 
@@ -104,31 +106,8 @@ class Shell extends Application
     /**
      * Invoke a Psy Shell from the current context.
      *
-     * For example:
-     *
-     *     foreach ($items as $item) {
-     *         \Psy\Shell::debug(get_defined_vars());
-     *     }
-     *
-     * If you would like your shell interaction to affect the state of the
-     * current context, you can extract() the values returned from this call:
-     *
-     *     foreach ($items as $item) {
-     *         extract(\Psy\Shell::debug(get_defined_vars()));
-     *         var_dump($item); // will be whatever you set $item to in Psy Shell
-     *     }
-     *
-     * Optionally, supply an object as the `$boundObject` parameter. This
-     * determines the value `$this` will have in the shell, and sets up class
-     * scope so that private and protected members are accessible:
-     *
-     *     class Foo {
-     *         function bar() {
-     *             \Psy\Shell::debug(get_defined_vars(), $this);
-     *         }
-     *     }
-     *
-     * This only really works in PHP 5.4+ and HHVM 3.5+, so upgrade already.
+     * @see Psy\debug
+     * @deprecated will be removed in 1.0. Use \Psy\debug instead
      *
      * @param array  $vars        Scope variables from the calling context (default: array())
      * @param object $boundObject Bound object ($this) value for the shell
@@ -137,25 +116,7 @@ class Shell extends Application
      */
     public static function debug(array $vars = array(), $boundObject = null)
     {
-        echo PHP_EOL;
-
-        $sh = new \Psy\Shell();
-        $sh->setScopeVariables($vars);
-
-        // Show a couple of lines of call context for the debug session.
-        //
-        // @todo come up with a better way of doing this which doesn't involve injecting input :-P
-        if ($sh->has('whereami')) {
-            $sh->addInput('whereami -n2', true);
-        }
-
-        if ($boundObject !== null) {
-            $sh->setBoundObject($boundObject);
-        }
-
-        $sh->run();
-
-        return $sh->getScopeVariables(false);
+        return \Psy\debug($vars, $boundObject);
     }
 
     /**
@@ -705,12 +666,22 @@ class Shell extends Application
         if ($out !== '' && !$isCleaning) {
             $this->output->write($out, false, ShellOutput::OUTPUT_RAW);
             $this->outputWantsNewline = (substr($out, -1) !== "\n");
+            $this->stdoutBuffer .= $out;
         }
 
         // Output buffering is done!
-        if ($this->outputWantsNewline && $phase & PHP_OUTPUT_HANDLER_END) {
-            $this->output->writeln(sprintf('<aside>%s</aside>', $this->config->useUnicode() ? '⏎' : '\\n'));
-            $this->outputWantsNewline = false;
+        if ($phase & PHP_OUTPUT_HANDLER_END) {
+            // Write an extra newline if stdout didn't end with one
+            if ($this->outputWantsNewline) {
+                $this->output->writeln(sprintf('<aside>%s</aside>', $this->config->useUnicode() ? '⏎' : '\\n'));
+                $this->outputWantsNewline = false;
+            }
+
+            // Save the stdout buffer as $__out
+            if ($this->stdoutBuffer !== '') {
+                $this->context->setLastStdout($this->stdoutBuffer);
+                $this->stdoutBuffer = '';
+            }
         }
     }
 
@@ -920,7 +891,17 @@ class Shell extends Application
             return $line;
         }
 
-        return $this->readline->readline($this->getPrompt());
+        if ($bracketedPaste = $this->config->useBracketedPaste()) {
+            printf("\e[?2004h"); // Enable bracketed paste
+        }
+
+        $line = $this->readline->readline($this->getPrompt());
+
+        if ($bracketedPaste) {
+            printf("\e[?2004l"); // ... and disable it again
+        }
+
+        return $line;
     }
 
     /**
