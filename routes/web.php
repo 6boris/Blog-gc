@@ -11,6 +11,59 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('demo','Admin\DemoController@index');
+Route::get('details','Admin\DemoController@details');
+Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
+	Route::get('','IndexController@index');
+	Route::get('demo','IndexController@demo');
+	Route::get('aaa','IndexController@aaa');
+	Route::group(['prefix' => 'sysconfig'],function(){
+        Route::get('index','SysConfigController@index');
+		Route::get('system','SysConfigController@system');
+		Route::get('api','SysConfigController@api');
+		Route::get('demo','SysConfigController@demo');
+	});
+	Route::group(['prefix' => 'user'],function(){
+		Route::get('login','UserController@login');
+		Route::get('register','UserController@register');
+		Route::get('loginout','UserController@loginout');
+		Route::get('edit','UserController@edit');
+		Route::get('demo','UserController@demo');
+	});
+	Route::group(['prefix' => 'role'],function(){
+		Route::get('','RoleController@index');
+		Route::get('index','RoleController@index');
+		Route::get('edit','RoleController@edit');
+		Route::get('demo','RoleController@demo');
+	});
+	Route::group(['prefix' => 'article'],function(){
+		Route::get('','ArticleController@index');
+		Route::get('listarticle','ArticleController@listarticle');
+		Route::any('addarticle','ArticleController@add');
+		Route::get('edit','ArticleController@edit');
+		Route::get('del','ArticleController@del');
+		Route::any('addcate','ArticleController@addcate');
+		Route::get('demo','ArticleController@demo');
+	}); 
 });
+
+Route::group(['prefix' => 'service','namespace' => 'Service'],function(){
+	Route::get('adminlogin','AdminUserControllter@login');
+	Route::post('adminreg','AdminUserControllter@register');
+	Route::get('adminloginout','AdminUserControllter@loginout');
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
