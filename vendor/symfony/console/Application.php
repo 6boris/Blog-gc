@@ -94,9 +94,6 @@ class Application
     /**
      * Runs the current application.
      *
-     * @param InputInterface  $input  An Input instance
-     * @param OutputInterface $output An Output instance
-     *
      * @return int 0 if everything went fine, or an error code
      *
      * @throws \Exception When running fails. Bypass this when {@link setCatchExceptions()}.
@@ -165,9 +162,6 @@ class Application
     /**
      * Runs the current application.
      *
-     * @param InputInterface  $input  An Input instance
-     * @param OutputInterface $output An Output instance
-     *
      * @return int 0 if everything went fine, or an error code
      */
     public function doRun(InputInterface $input, OutputInterface $output)
@@ -227,11 +221,6 @@ class Application
         return $exitCode;
     }
 
-    /**
-     * Set a helper set to be used with the command.
-     *
-     * @param HelperSet $helperSet The helper set
-     */
     public function setHelperSet(HelperSet $helperSet)
     {
         $this->helperSet = $helperSet;
@@ -251,11 +240,6 @@ class Application
         return $this->helperSet;
     }
 
-    /**
-     * Set an input definition to be used with this application.
-     *
-     * @param InputDefinition $definition The input definition
-     */
     public function setDefinition(InputDefinition $definition)
     {
         $this->definition = $definition;
@@ -421,8 +405,6 @@ class Application
      *
      * If a command with the same name already exists, it will be overridden.
      * If the command is not enabled it will not be added.
-     *
-     * @param Command $command A Command object
      *
      * @return Command|null The registered command if enabled or null
      */
@@ -676,9 +658,6 @@ class Application
 
     /**
      * Renders a caught exception.
-     *
-     * @param \Exception      $e      An exception instance
-     * @param OutputInterface $output An OutputInterface instance
      */
     public function renderException(\Exception $e, OutputInterface $output)
     {
@@ -699,7 +678,7 @@ class Application
                 $width = 1 << 31;
             }
             $lines = array();
-            foreach (preg_split('/\r?\n/', $e->getMessage()) as $line) {
+            foreach (preg_split('/\r?\n/', trim($e->getMessage())) as $line) {
                 foreach ($this->splitStringByWidth($line, $width - 4) as $line) {
                     // pre-format lines to get the right string length
                     $lineLength = Helper::strlen($line) + 4;
@@ -727,8 +706,8 @@ class Application
                 $trace = $e->getTrace();
                 array_unshift($trace, array(
                     'function' => '',
-                    'file' => $e->getFile() !== null ? $e->getFile() : 'n/a',
-                    'line' => $e->getLine() !== null ? $e->getLine() : 'n/a',
+                    'file' => null !== $e->getFile() ? $e->getFile() : 'n/a',
+                    'line' => null !== $e->getLine() ? $e->getLine() : 'n/a',
                     'args' => array(),
                 ));
 
@@ -818,9 +797,6 @@ class Application
 
     /**
      * Configures the input and output instances based on the user arguments and options.
-     *
-     * @param InputInterface  $input  An InputInterface instance
-     * @param OutputInterface $output An OutputInterface instance
      */
     protected function configureIO(InputInterface $input, OutputInterface $output)
     {
@@ -854,9 +830,9 @@ class Application
             $output->setVerbosity(OutputInterface::VERBOSITY_QUIET);
             $input->setInteractive(false);
         } else {
-            if ($input->hasParameterOption('-vvv', true) || $input->hasParameterOption('--verbose=3', true) || $input->getParameterOption('--verbose', false, true) === 3) {
+            if ($input->hasParameterOption('-vvv', true) || $input->hasParameterOption('--verbose=3', true) || 3 === $input->getParameterOption('--verbose', false, true)) {
                 $output->setVerbosity(OutputInterface::VERBOSITY_DEBUG);
-            } elseif ($input->hasParameterOption('-vv', true) || $input->hasParameterOption('--verbose=2', true) || $input->getParameterOption('--verbose', false, true) === 2) {
+            } elseif ($input->hasParameterOption('-vv', true) || $input->hasParameterOption('--verbose=2', true) || 2 === $input->getParameterOption('--verbose', false, true)) {
                 $output->setVerbosity(OutputInterface::VERBOSITY_VERY_VERBOSE);
             } elseif ($input->hasParameterOption('-v', true) || $input->hasParameterOption('--verbose=1', true) || $input->hasParameterOption('--verbose', true) || $input->getParameterOption('--verbose', false, true)) {
                 $output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE);
@@ -869,10 +845,6 @@ class Application
      *
      * If an event dispatcher has been attached to the application,
      * events are also dispatched during the life-cycle of the command.
-     *
-     * @param Command         $command A Command instance
-     * @param InputInterface  $input   An Input instance
-     * @param OutputInterface $output  An Output instance
      *
      * @return int 0 if everything went fine, or an error code
      */
@@ -941,8 +913,6 @@ class Application
 
     /**
      * Gets the name of the command based on input.
-     *
-     * @param InputInterface $input The input interface
      *
      * @return string The command name
      */
@@ -1121,9 +1091,8 @@ class Application
             $lines[] = str_pad($line, $width);
             $line = $char;
         }
-        if ('' !== $line) {
-            $lines[] = count($lines) ? str_pad($line, $width) : $line;
-        }
+
+        $lines[] = count($lines) ? str_pad($line, $width) : $line;
 
         mb_convert_variables($encoding, 'utf8', $lines);
 

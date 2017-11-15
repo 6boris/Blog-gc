@@ -88,7 +88,7 @@ if (! function_exists('array_dot')) {
 
 if (! function_exists('array_except')) {
     /**
-     * Get all of the given array except for a specified array of items.
+     * Get all of the given array except for a specified array of keys.
      *
      * @param  array  $array
      * @param  array|string  $keys
@@ -282,10 +282,10 @@ if (! function_exists('array_sort')) {
      * Sort the array by the given callback or attribute name.
      *
      * @param  array  $array
-     * @param  callable|string  $callback
+     * @param  callable|string|null  $callback
      * @return array
      */
-    function array_sort($array, $callback)
+    function array_sort($array, $callback = null)
     {
         return Arr::sort($array, $callback);
     }
@@ -1046,6 +1046,7 @@ if (! function_exists('throw_if')) {
      * @param  \Throwable|string  $exception
      * @param  array  ...$parameters
      * @return void
+     * @throws \Throwable
      */
     function throw_if($boolean, $exception, ...$parameters)
     {
@@ -1063,6 +1064,7 @@ if (! function_exists('throw_unless')) {
      * @param  \Throwable|string  $exception
      * @param  array  ...$parameters
      * @return void
+     * @throws \Throwable
      */
     function throw_unless($boolean, $exception, ...$parameters)
     {
@@ -1154,13 +1156,14 @@ if (! function_exists('windows_os')) {
 
 if (! function_exists('with')) {
     /**
-     * Return the given object. Useful for chaining.
+     * Return the given value, optionally passed through the given callback.
      *
-     * @param  mixed  $object
+     * @param  mixed  $value
+     * @param  callable|null  $callback
      * @return mixed
      */
-    function with($object)
+    function with($value, callable $callback = null)
     {
-        return $object;
+        return is_null($callback) ? $value : $callback($value);
     }
 }

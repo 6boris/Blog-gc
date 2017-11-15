@@ -882,7 +882,7 @@ class Builder
             }
 
             // Next we'll pass the scope callback to the callScope method which will take
-            // care of groping the "wheres" correctly so the logical order doesn't get
+            // care of grouping the "wheres" properly so the logical order doesn't get
             // messed up when adding scopes. Then we'll return back out the builder.
             $builder = $builder->callScope(
                 [$this->model, 'scope'.ucfirst($scope)],
@@ -1254,12 +1254,12 @@ class Builder
             return $this->localMacros[$method](...$parameters);
         }
 
-        if (isset(static::$macros[$method]) and static::$macros[$method] instanceof Closure) {
-            return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
-        }
-
         if (isset(static::$macros[$method])) {
-            return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
+            if (static::$macros[$method] instanceof Closure) {
+                return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
+            }
+
+            return call_user_func_array(static::$macros[$method], $parameters);
         }
 
         if (method_exists($this->model, $scope = 'scope'.ucfirst($method))) {
