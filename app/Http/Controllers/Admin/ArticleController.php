@@ -10,6 +10,9 @@ class ArticleController extends Controller
     public function article(){
     	return view('admin.article.index');
     }
+    public function index(){
+        
+    }
 
     public function add(){
     	return view('admin.article.add');
