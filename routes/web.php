@@ -11,7 +11,7 @@
 |
 */
 Route::get('','Admin\IndexController@index');
-Route::get('demo','Admin\DemoController@index');
+Route::get('demo','Admin\DemoControllerindex');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 
@@ -27,7 +27,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 		Route::get('system','SysConfigController@system');
 		Route::get('api','SysConfigController@api');
 		Route::get('demo','SysConfigController@demo');
-
+		Route::get("demo","demo");
 
 	});
 
