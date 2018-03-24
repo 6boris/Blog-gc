@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function(){
 		Route::get('system','SysConfigController@system');
 		Route::get('api','SysConfigController@api');
 		Route::get('demo','SysConfigController@demo');
+		Route::get('','');
 
 	});
 
